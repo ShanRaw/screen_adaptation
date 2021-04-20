@@ -7,16 +7,16 @@
  
 > 注意事项 最好 dart sdk>=2.6 [没有使用低版本测试如有问题请反馈]()
  
-###配置pubspec.yaml
+### 配置pubspec.yaml
 ```yaml
 dependencies:
   screen_adaptation: ^{latest version}
 ```
-###使用的时候引入
+### 使用的时候引入
 ```dart
 import 'package:screen_adaptation/screen_adaptation.dart';
 ```
-###使用方法
+### 使用方法
 ```dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 > 如果需要旋转的屏幕的时候自动刷新UI 需要在最外层增加 OrientationBuilder 不需要请忽略 
-###参数说明
+### 参数说明
 - ScreenAdaptationInit
 
 |属性|类型|默认值|描述|
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
 |setSp|Function|screenAdaptationUtil.setSp(fontSize,allowFontScaling:true/false)或者[fontSize].s [fontSize].st [fontSize].sf|文字适配  allowFontScaling 是否允许系统缩放
 |setAutomatic|Function|screenAdaptationUtil.setAutomatic(num)或者[num].r|根据宽高比例较小的适配 
 
-###例子
+### 例子
 ```dart
 class DomePage extends StatelessWidget {
   @override
