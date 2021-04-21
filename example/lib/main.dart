@@ -33,7 +33,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('screen_adaptation'),
         actions: [
-          FlatButton(
+          TextButton(
               onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -206,8 +206,7 @@ class DomePage extends StatelessWidget {
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-      bottomNavigationBar: FlatButton(
-        padding: EdgeInsets.zero,
+      bottomNavigationBar: TextButton(
         onPressed: () => Navigator.maybePop(context),
         child: Container(
           height: 100.w,
