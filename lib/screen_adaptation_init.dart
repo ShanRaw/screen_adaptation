@@ -11,29 +11,31 @@ class ScreenAdaptationInit extends StatelessWidget {
   final Size? landscapeSize;
   final bool allowFontScaling;
 
-  ScreenAdaptationInit({required this.child, this.size = const Size(
-      750, 1337), this.allowFontScaling = false, this.landscapeSize});
+  ScreenAdaptationInit(
+      {required this.child,
+      this.size = const Size(750, 1337),
+      this.allowFontScaling = false,
+      this.landscapeSize});
 
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {
-          final mediaQuery = MediaQuery.of(context);
-          ScreenAdaptationUtil.instance = ScreenAdaptationUtil(
-              width: size.width,
-              height: size.height,
-              landscapeWidth: landscapeSize?.width,
-              landscapeHeight: landscapeSize?.height,
-              allowFontScaling: allowFontScaling,
-              orientation: orientation,
-              screenWidth: mediaQuery.size.width,
-              screenHeight: mediaQuery.size.height,
-              statusBarHeight: mediaQuery.padding.top,
-              bottomBarHeight: mediaQuery.padding.bottom,
-              textScaleFactor: mediaQuery.textScaleFactor,
-              pixelRatio: mediaQuery.devicePixelRatio
-          );
-          return child;
-        });
+      final mediaQuery = MediaQuery.of(context);
+      ScreenAdaptationUtil.instance = ScreenAdaptationUtil(
+          width: size.width,
+          height: size.height,
+          landscapeWidth: landscapeSize?.width,
+          landscapeHeight: landscapeSize?.height,
+          allowFontScaling: allowFontScaling,
+          orientation: orientation,
+          screenWidth: mediaQuery.size.width,
+          screenHeight: mediaQuery.size.height,
+          statusBarHeight: mediaQuery.padding.top,
+          bottomBarHeight: mediaQuery.padding.bottom,
+          textScaleFactor: mediaQuery.textScaleFactor,
+          pixelRatio: mediaQuery.devicePixelRatio);
+      return child;
+    });
   }
 }
