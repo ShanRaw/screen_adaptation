@@ -8,10 +8,10 @@ import 'package:screen_adaptation/screen_adaptation_util.dart';
 class ScreenAdaptationInit extends StatelessWidget {
   final Widget child;
   final Size size;
-  final Size landscapeSize;
+  final Size? landscapeSize;
   final bool allowFontScaling;
 
-  ScreenAdaptationInit({@required this.child, this.size = const Size(
+  ScreenAdaptationInit({required this.child, this.size = const Size(
       750, 1337), this.allowFontScaling = false, this.landscapeSize});
 
   @override

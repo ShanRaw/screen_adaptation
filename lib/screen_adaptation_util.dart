@@ -14,18 +14,18 @@ import 'package:screen_adaptation/screen_adaptation_provider.dart';
 /// [textScaleFactor] //文字缩放比例
 /// [allowFontScaling] //是否允许文字缩放
 class ScreenAdaptationUtil implements ScreenAdaptationProvider {
-  double width;
-  double height;
-  double screenWidth;
-  double screenHeight;
-  Orientation orientation;
-  double pixelRatio;
-  double statusBarHeight;
-  double bottomBarHeight;
-  double textScaleFactor;
+  late double width;
+  late double height;
+  double? screenWidth;
+  double? screenHeight;
+  Orientation? orientation;
+  double? pixelRatio;
+  double? statusBarHeight;
+  double? bottomBarHeight;
+  double? textScaleFactor;
   bool allowFontScaling;
 
-  static ScreenAdaptationUtil _adaptationUtil;
+  static ScreenAdaptationUtil? _adaptationUtil;
 
   static set instance(ScreenAdaptationUtil adaptationUtil) {
     _adaptationUtil = adaptationUtil;
@@ -42,8 +42,8 @@ class ScreenAdaptationUtil implements ScreenAdaptationProvider {
     this.bottomBarHeight,
     this.textScaleFactor,
     this.allowFontScaling = false,
-    double landscapeWidth,
-    double landscapeHeight,
+    double? landscapeWidth,
+    double? landscapeHeight,
   }) {
     if (orientation == Orientation.portrait) {
       this.width = width;
@@ -54,7 +54,7 @@ class ScreenAdaptationUtil implements ScreenAdaptationProvider {
     }
   }
 
-  static ScreenAdaptationUtil getInstance() {
+  static ScreenAdaptationUtil? getInstance() {
     if (_adaptationUtil == null) {
       assert(
         _adaptationUtil != null,
@@ -68,35 +68,35 @@ class ScreenAdaptationUtil implements ScreenAdaptationProvider {
   @override
   double setAutomatic(num wh) {
     // TODO: implement setAutomatic
-    return wh * min(screenWidth / this.width, screenHeight / this.height);
+    return wh * min(screenWidth! / this.width, screenHeight! / this.height);
   }
 
   @override
   double setHeight(num height) {
-    return height * (screenHeight / this.height);
+    return height * (screenHeight! / this.height);
   }
 
   @override
-  double setSp(num fontSize, {bool allowFontScaling}) {
+  double setSp(num fontSize, {bool? allowFontScaling}) {
     if (allowFontScaling == null) {
       if (this.allowFontScaling == false)
         return fontSize *
-            min(screenWidth / this.width, screenHeight / this.height);
+            min(screenWidth! / this.width, screenHeight! / this.height);
       return fontSize *
-          min(screenWidth / this.width, screenHeight / this.height) *
-          textScaleFactor;
+          min(screenWidth! / this.width, screenHeight! / this.height) *
+          textScaleFactor!;
     }
     if (allowFontScaling == false)
       return fontSize *
-          min(screenWidth / this.width, screenHeight / this.height);
+          min(screenWidth! / this.width, screenHeight! / this.height);
     return fontSize *
-        min(screenWidth / this.width, screenHeight / this.height) *
-        textScaleFactor;
+        min(screenWidth! / this.width, screenHeight! / this.height) *
+        textScaleFactor!;
   }
 
   @override
   double setWidth(num width) {
     // TODO: implement setWidth
-    return width * (screenWidth / this.width);
+    return width * (screenWidth! / this.width);
   }
 }
