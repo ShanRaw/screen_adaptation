@@ -3,6 +3,8 @@
  *flutter 屏幕适配方案*
  
 ![手机效果](./example/dome1.jpeg)![手机效果](./example/dome2.jpeg)
+
+![手机效果](./example/dome3.gif)
  
  
 > 注意事项 最好 dart sdk>=2.6 [没有使用低版本测试如有问题请反馈]()

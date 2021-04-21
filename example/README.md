@@ -2,7 +2,7 @@
 
  *flutter 屏幕适配方案*
  
-![手机效果](./dome1.jpeg)![手机效果](./dome2.jpeg)
+![手机效果](./dome1.jpeg)![手机效果](./dome2.jpeg)[手机效果](./dome3.gif)
 
 ```dart
 import 'package:flutter/material.dart';
