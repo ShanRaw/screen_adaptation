@@ -1,6 +1,6 @@
 # screen_adaptation
 
- *flutter 屏幕适配方案*
+ *flutter 屏幕适配方案0.01*
  
 ![手机效果](./example/dome1.jpeg)![手机效果](./example/dome2.jpeg)
  
