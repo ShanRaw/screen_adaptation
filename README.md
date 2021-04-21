@@ -21,7 +21,7 @@ import 'package:screen_adaptation/screen_adaptation.dart';
 ### 使用方法
 ```dart
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  // This widget is the root of your application.  
   @override
   Widget build(BuildContext context) {
     /// [OrientationBuilder] 不需要旋转屏幕方向UI可以省略 直接返回MaterialApp
