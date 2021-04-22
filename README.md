@@ -42,7 +42,10 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-> 如果需要旋转的屏幕的时候自动刷新UI 需要在最外层增加 OrientationBuilder 不需要请忽略 
+> 如果需要旋转的屏幕的时候自动刷新UI 需要在最外层增加 OrientationBuilder 不需要请忽略
+ 
+> 如果旋转之后页面没有刷新UI 比如使用flutter_modular的时候 可以把最外层的 OrientationBuilder去掉 在需要旋转刷新UI的外层增加 OrientationBuilder
+
 ### 参数说明
 - ScreenAdaptationInit
 
